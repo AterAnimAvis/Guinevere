@@ -80,6 +80,7 @@ To actually use Guinevere, you need pipenv and the latest Node.JS and the follow
 - @nlpjs/builtin-microsoft  (As above.)
 - @nlpjs/core-loader        (As above.)
 - @nlpjs/ner                (As above.)
+- node-nlp                  (As above.)
 - discord.js@dev            (For the Discord bot)
 - socket.io                 (For the Core host)
 - socket.io-client          (For the Discord bot)
