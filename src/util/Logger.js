@@ -64,7 +64,7 @@ const coreTranslations = {
 
     /**
      * @constructor
-     * @param {String} string - An optional String to create this new Message out of. Useful for copying messages.
+     * @param {String?} string - An optional String to create this new Message out of. Useful for copying messages.
      */
     constructor(string) {
         this.content = string != null ? string : "";
