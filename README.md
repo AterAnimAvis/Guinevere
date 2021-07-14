@@ -74,7 +74,7 @@ For example, the ConsoleInterface ignores the \[begin/end\]Formatting keys, wher
 
 # Usage
 
-To actually use Guinevere, you need the latest Node.JS and the following modules:
+To actually use Guinevere, you need pipenv and the latest Node.JS and the following modules:
 - luxon                     (Currently only used for testing timezones)
 - @nlpjs/basic              (Used by the Natural Language Processing backend)
 - @nlpjs/builtin-microsoft  (As above.)
@@ -90,6 +90,8 @@ To actually use Guinevere, you need the latest Node.JS and the following modules
 - dotenv                    (Global configuration file)
 
 These are provided by default with the package.json.
+
+Run `pipenv install` to install the python dependencies
 
 Optionally, make a .env file in the project root with the following keys:
 * GWEN_ENV=[testing/debug/release]
@@ -140,7 +142,7 @@ Finally, make three json files in data:
 
 The fallbacks list is optional, but useful.
   
-Once this is all done, run `node main.js` in the root folder to start the Core with its Discord and Console interfaces.  
+Once this is all done, run `npm run` in the root folder to start the Core with its Discord and Console interfaces.  
 
 ## Revisions  
 

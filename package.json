@@ -23,6 +23,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "run": "node src/main.js",
     "train": "node retrain.js"
   },
   "repository": {
