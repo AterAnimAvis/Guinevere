@@ -104,7 +104,16 @@ class DiscordInterface {
 
             this.socket = io("http://localhost:" + this.gwen.corePort);
             this.socket.on("connect", () => this.socket.emit("init", "DiscordClient"));
-            this.socket.on("thinking", (newStatus, extra) => extra != null ? this.client.channels.fetch(extra.return.channelId).then(channel => newStatus ? channel.startTyping() : channel.stopTyping()) : null);
+            this.socket.on("thinking", (newStatus, extra) => extra != null ? this.client.channels.fetch(extra.return.channelId).then(channel => {
+                // if (channel.typingCount > 1) {
+                //     let tempMessage = new InterfaceMessage();
+                //     tempMessage.source = "Discord"; tempMessage.destination = "any";
+                //     tempMessage.title(`Thinking`).beginFormatting().warn(`Unbalanced Thinking`).endFormatting();
+                //     this.gwen.coreEmitter.emit("message", tempMessage);
+                // }
+
+                return newStatus ? channel.startTyping() : channel.stopTyping(true)
+            }) : null);
 
 
             this.socket.on("answer", (message, extra) => {

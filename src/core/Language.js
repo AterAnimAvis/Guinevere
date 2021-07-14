@@ -82,6 +82,7 @@ class NLU {
             obj.extra.incomplete = true;
             // Data is incomplete, we need to ask more.
             this.brain.talk(srcAnswer, false, obj.extra);
+            this.brain.socket.emit("thinking", false, extraData);
             // Save conversation to disk for restoration
 
             return [];
@@ -121,8 +122,10 @@ class NLU {
             }
         }
 
-        if(obj.entities && obj.entities.length == 0)
+        if(obj.entities && obj.entities.length == 0) {
+            this.brain.socket.emit("thinking", false, extraData);
             return false;
+        }
 
         try {
             await this.brain.execute(obj, extraData);
